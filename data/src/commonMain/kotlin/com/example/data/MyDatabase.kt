@@ -16,4 +16,6 @@ data class MyEntity(
     @PrimaryKey val id: Int,
 )
 
-expect object MyDatabaseCtor : RoomDatabaseConstructor<MyDatabase>
+expect object MyDatabaseCtor : RoomDatabaseConstructor<MyDatabase> {
+    override fun initialize(): MyDatabase
+}
